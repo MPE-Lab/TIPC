@@ -1,12 +1,14 @@
 # TIPC R package
 TIPC: Tumor-Immune Partitioning and Clustering
 
-````
+
 ## package installation
+````
 devtools::install_github('MPE-Lab/TIPC')
 ````
 
 ## step 0: set TIPC result output directory
+````
 root_dir <- "D:/TIPC_test"
 dir.create(root_dir)
 clustering_subfolder_nm <- 'test'
@@ -35,6 +37,7 @@ for (ll in seq(40,60,by=10)){
 }
 ````
 ## step 5: clustering of cases based on TIPC spatical metrics
+````
 for (ll in seq(40,60,by=10)){
   input_dir <- file.path(root_dir,paste0("TIPC_hexLen",ll))
   consensus_clustering(root_dir=input_dir)
@@ -69,3 +72,4 @@ for (ll in seq(40,60,by=10)){
                             min_cluster_size = 5,
                             all_ref_check=FALSE, ref_cluster_no = 1)
 }
+````
