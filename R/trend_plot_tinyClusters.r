@@ -113,7 +113,7 @@ trend_plot_tinyClusters <- function(root_dir =  NULL, hex_len_range = NULL, hex_
   plot_fnm <- file.path(output_dir, 'total_no_unclassifed_cases_by_hexlen_N_k.pdf')
   pl <- ggplot(data=all_hexLen_k, aes(x = k, y=total_outlier_cases)) +
     geom_point(size=4) +
-    scale_x_discrete(limits=c(all_hexLen_k$k))+
+    scale_x_discrete(limits=c(range(all_hexLen_k$k)))+
     ylab('total no. of unclassified tumors')+
     facet_wrap(~ hex_len) + theme_bw()+
     theme(axis.title = element_text(size = 26, face = 'bold'), axis.text = element_text(size = 24),
@@ -127,7 +127,7 @@ trend_plot_tinyClusters <- function(root_dir =  NULL, hex_len_range = NULL, hex_
   pl <- ggplot(data=all_hexLen_k, aes(x = k, y=no_effective_cluster, color='no. of effective clusters')) +
     geom_point(size=4) +
     geom_point(size=4, aes(x = k, y=no_outlier_cluster, color='no. of outlier clusters')) +
-    scale_x_discrete(limits=c(all_hexLen_k$k))+
+    scale_x_discrete(limits=c(range(all_hexLen_k$k)))+
     ylab('No. of clusters')+
     facet_wrap(~ hex_len) + theme_bw()+
     theme(legend.position='bottom' ,
