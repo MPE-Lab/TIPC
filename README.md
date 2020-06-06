@@ -5,6 +5,7 @@ TIPC: Tumor-Immune Partitioning and Clustering
 ## package installation
 ````
 devtools::install_github('MPE-Lab/TIPC')
+library(TIPC)
 ````
 
 ## step 0: set TIPC result output directory
