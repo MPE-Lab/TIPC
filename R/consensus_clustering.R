@@ -36,7 +36,7 @@ consensus_clustering <- function(min_k = 2, max_k = 6,distance='pearson',
   ## ======================
   ## create output directory
   ## ======================
-  output_dir_bnm <- paste0('ConsensusClusterPlus_',output_bnm)
+  output_dir_bnm <- paste0(output_bnm)
   res_subdir <- file.path(root_dir, output_dir_bnm)
   dir.create(res_subdir)
 
