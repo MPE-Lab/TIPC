@@ -35,7 +35,7 @@
 trend_plot_tinyClusters <- function(root_dir =  NULL, hex_len_range = NULL, hex_len_stepsize =  NULL,
                                     output_dir=NULL,
                                     pdf_width=12, pdf_height=8,min_cluster_size = 30,
-                                    clustering_subfolder_nm='ConsensusClusterPlus_test'){
+                                    clustering_subfolder_nm='test'){
 
   ## ======================
   ## check argument root_dir
