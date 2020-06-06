@@ -1,5 +1,5 @@
 Package: TIPC
-Title: Tumor-Immune Partitioning and Clustering
+Title: Tumor-Immune Partitioning and Clustering (TIPC)
 Version: 0.1.0
 Authors@R: c(person("MaiChan", "Lau", email = "mclau@bwh.harvard.edu", role = c("aut", "cre")),
     person("Jennifer", "Borowsky", email = "borowsky.jennifer@gmail.com", role = c("aut")),
