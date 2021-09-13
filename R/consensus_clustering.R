@@ -14,9 +14,6 @@
 #' @param seed An integer seed for randomizing case ordering and for ConsensusClusterPlus.
 #' @param output_bnm A character string appended to output folder name;
 #'   sub-folders are created for different k from min_k to max_k.
-#' @examples
-#' root_dir <- system.file("data", package = "TIPC")
-#' consensus_clustering(root_dir=root_dir)
 #' @export
 #' @importFrom grDevices pdf
 #' @importFrom utils write.csv

@@ -7,7 +7,7 @@
 consensus_clustering(
   min_k = 2,
   max_k = 6,
-  distance = "Pearson",
+  distance = "pearson",
   root_dir = NULL,
   output_bnm = "test",
   seed = 999
@@ -34,8 +34,4 @@ sub-folders are created for different k from min_k to max_k.}
 \description{
 Clustering of TIPC metrics using
 \code{\link[ConsensusClusterPlus]{ConsensusClusterPlus}}
-}
-\examples{
-root_dir <- system.file("data", package = "TIPC")
-consensus_clustering(root_dir=root_dir)
 }

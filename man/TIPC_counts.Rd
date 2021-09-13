@@ -4,7 +4,8 @@
 \name{TIPC_counts}
 \alias{TIPC_counts}
 \title{TIPC count data.}
-\format{A list containing 5 (directions) elements; each of which is a
+\format{
+A list containing 5 (directions) elements; each of which is a
   data.frame with 137 rows (i.e. cores) and 10 variables: \describe{
   \item{tumor_ONLY}{number of sub-region containing tumor cell only, counts}
   \item{Stroma_ONLY}{number of sub-region containing stromal cell only,
@@ -16,7 +17,8 @@
   sub-region containing immune & tumor cells and I:S ratio < global I:S,
   counts} \item{empty}{number of sub-region 0 cell, counts}
   \item{global_I2Tu}{global I:T ratio, numeric} \item{global_I2S}{global I:S
-  ratio, numeric} \item{total_subregions}{number of total sub-regions, counts}}}
+  ratio, numeric} \item{total_subregions}{number of total sub-regions, counts}}
+}
 \usage{
 TIPC_counts
 }

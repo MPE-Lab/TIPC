@@ -33,8 +33,3 @@ The default values are 9 and 12; inherited from \code{\link[grDevices]{pdf}}}
 Plotting the changes in TIPC metric count as the grid shfited to 4 other
 directions i.e. origin + left + right + uppper + down
 }
-\examples{
-root_dir <- "C:/Users/Mai Chan Lau/Desktop/TIPC_package/test_run/"
-trend_plot_hexLen(root_dir = root_dir)
-
-}

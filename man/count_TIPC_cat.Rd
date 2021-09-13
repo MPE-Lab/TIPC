@@ -19,7 +19,3 @@ A list contain all 5 directional TIPC metrics which will be saved in
 Count number of sub-regsions of each of the TIPC spatial category, for
 individual directions
 }
-\examples{
-root_dir <- system.file("data", package = "TIPC")
-count_TIPC_cat(root_dir=root_dir)
-}

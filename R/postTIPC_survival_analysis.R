@@ -26,14 +26,7 @@
 #'   reference, if unspecified (NULL) cluster of largest size will be used.
 #' @param all_ref_check A boolean indicating if multiple survival analyses are performed
 #' using individual clusters as reference; if TRUE, it will overwrite \code{ref_cluster_no}
-#'
-#' @examples
-#' load(system.file("data","surv_data.Rda", package = "TIPC"))
-#' root_dir <- system.file("data", package = "TIPC")
-#' clustering_subfolder_nm <- 'ConsensusClusterPlus_test'
-#' postTIPC_univariateSurvivalAnalysis(root_dir = root_dir,
-#' clustering_subfolder_nm=clustering_subfolder_nm,
-#' method = 'univariate', surv_data = surv_data)
+#' @param KM_xlab A character string specifying the x-axis label of Kaplan-Meier curve
 #' @importFrom stats as.formula relevel
 #' @importFrom grDevices pdf dev.off
 #' @importFrom RColorBrewer brewer.pal

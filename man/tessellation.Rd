@@ -31,9 +31,3 @@ A list contain all 5 directional sub-region count of 6 TIPC category
 Sub-dividing 2D cell space into hexogonal sub-regions and counting the
 number of immune cell, tumor cell, and stromal cell in each sub-region.
 }
-\examples{
-load(system.file("data", "cell_data.rda", package = "TIPC"))
-output_dir <- "C:/Users/Mai Chan Lau/Desktop/TIPC_package/test_run"
-tessellation(cell_data = cell_data, output_dir = output_dir)
-
-}

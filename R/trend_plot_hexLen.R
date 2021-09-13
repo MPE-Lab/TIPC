@@ -17,11 +17,6 @@
 #'   different hexagonal lengths will be processed.
 #' @param pdf_width,pdf_height the width and height of the graphics region in inches.
 #' The default values are 18 and 12; inherited from \code{\link[grDevices]{pdf}}
-#'
-#' @examples
-#' root_dir <- "C:/Users/Mai Chan Lau/Desktop/TIPC_package/test_run/"
-#' trend_plot_hexLen(root_dir = root_dir)
-#'
 #' @export
 #' @importFrom grDevices pdf dev.off
 #' @import ggplot2
@@ -29,6 +24,7 @@
 trend_plot_hexLen <- function(root_dir =  NULL, hex_len_range = NULL, hex_len_stepsize =  NULL,
                               output_dir=NULL, pdf_width=18, pdf_height=12){
 
+  TIPC.cat <- counts <- hexLen <- NULL
   ## ======================
   ## check argument root_dir
   ## ======================

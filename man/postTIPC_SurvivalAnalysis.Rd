@@ -12,7 +12,8 @@ postTIPC_SurvivalAnalysis(
   method = c("univariate", "multivariate"),
   surv_data = NULL,
   ref_cluster_no = NULL,
-  all_ref_check = FALSE
+  all_ref_check = FALSE,
+  KM_xlab = "Time"
 )
 }
 \arguments{
@@ -46,16 +47,10 @@ reference, if unspecified (NULL) cluster of largest size will be used.}
 
 \item{all_ref_check}{A boolean indicating if multiple survival analyses are performed
 using individual clusters as reference; if TRUE, it will overwrite \code{ref_cluster_no}}
+
+\item{KM_xlab}{A character string specifying the x-axis label of Kaplan-Meier curve}
 }
 \description{
 Plotting heat-maps of TIPC metric clustering results of all k's unless it is
 specified; using R package \code{\link[survival]{coxph}}
-}
-\examples{
-load(system.file("data","surv_data.Rda", package = "TIPC"))
-root_dir <- system.file("data", package = "TIPC")
-clustering_subfolder_nm <- 'ConsensusClusterPlus_test'
-postTIPC_univariateSurvivalAnalysis(root_dir = root_dir,
-clustering_subfolder_nm=clustering_subfolder_nm,
-method = 'univariate', surv_data = surv_data)
 }

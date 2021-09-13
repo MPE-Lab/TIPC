@@ -27,8 +27,3 @@ by \code{\link[TIPC]{tessellation}} will be processed.}
 A wrapper function to run \code{\link[TIPC]{count_TIPC_cat}} at various
 hexagonal lengths.
 }
-\examples{
-root_dir <- "C:/Users/Mai Chan Lau/Desktop/TIPC_package/test_run/"
-multiple_hexLen_count_TIPC_cat(root_dir = root_dir)
-
-}

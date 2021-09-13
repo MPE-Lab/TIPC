@@ -27,8 +27,3 @@ during \code{\link[TIPC]{consensus_clustering}}, parked under \code{root_dir}.}
 Plotting heat-maps of TIPC metric clustering results of all k's unless it is
 specified; using R package \code{\link[ComplexHeatmap]{Heatmap}}
 }
-\examples{
-root_dir <- system.file("data", package = "TIPC")
-clustering_subfolder_nm <- 'ConsensusClusterPlus_test'
-plot_TIPC_heatmap(root_dir = root_dir, clustering_subfolder_nm = clustering_subfolder_nm)
-}

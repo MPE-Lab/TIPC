@@ -86,13 +86,13 @@
 #'   upper} \item{I2S_high_U}{fractions of sub-region containing immune & tumor
 #'   cells and I:S ratio > global I:S, upper} \item{I2S_low_U}{fractions of
 #'   sub-region containing immune & tumor cells and I:S ratio < global I:S,
-#'   upper}\item{tumor_ONLY_L}{fractions of sub-region containing tumor cell only, lower}
-#'   \item{Stroma_ONLY_L}{fractions of sub-region containing stromal cell only,
-#'   lower} \item{I2Tu_high_L}{fractions of sub-region containing immune & tumor
-#'   cells and I:T ratio > global I:T, lower} \item{I2Tu_low_L}{fractions of
+#'   upper}\item{tumor_ONLY_D}{fractions of sub-region containing tumor cell only, lower}
+#'   \item{Stroma_ONLY_D}{fractions of sub-region containing stromal cell only,
+#'   lower} \item{I2Tu_high_D}{fractions of sub-region containing immune & tumor
+#'   cells and I:T ratio > global I:T, lower} \item{I2Tu_low_D}{fractions of
 #'   sub-region containing immune & tumor cells and I:T ratio < global I:T,
-#'   lower} \item{I2S_high_L}{fractions of sub-region containing immune & tumor
-#'   cells and I:S ratio > global I:S, lower} \item{I2S_low_L}{fractions of
+#'   lower} \item{I2S_high_D}{fractions of sub-region containing immune & tumor
+#'   cells and I:S ratio > global I:S, lower} \item{I2S_low_D}{fractions of
 #'   sub-region containing immune & tumor cells and I:S ratio < global I:S,
 #'   lower}}
 "TIPC_metrics"

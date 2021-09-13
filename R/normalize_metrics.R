@@ -5,12 +5,9 @@
 #' @param root_dir A directory path containing the TIPC_counts, i.e. counts of
 #'   TIPC categories of 5 shifted grids output from
 #'   \code{\link[TIPC]{count_TIPC_cat}}.
-#' @examples
-#' root_dir <- system.file("data", package = "TIPC")
-#' normalize_metrics(root_dir=root_dir)
 #' @export
 normalize_metrics <- function(root_dir = NULL){
-
+  tumor_ids <- NULL
   ## ======================
   ## root dir check
   ## ======================

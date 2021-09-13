@@ -12,17 +12,13 @@
 #' @param one_k An integer specifying the cluster number selected for heat-map
 #'   plotting; otherwise all k's found under \code{TIPC_cluster_dir} will be
 #'   processed.
-#'
-#' @examples
-#' root_dir <- system.file("data", package = "TIPC")
-#' clustering_subfolder_nm <- 'ConsensusClusterPlus_test'
-#' plot_TIPC_heatmap(root_dir = root_dir, clustering_subfolder_nm = clustering_subfolder_nm)
 #' @export
 #' @import ComplexHeatmap
 #' @importFrom grDevices pdf dev.off
 #' @importFrom RColorBrewer brewer.pal
 #' @importFrom grid gpar unit
 #' @importFrom utils read.csv
+#' @importFrom stats sd
 plot_TIPC_heatmap <- function(root_dir =  NULL, one_k = NULL, clustering_subfolder_nm = NULL) {
 
   ## ======================

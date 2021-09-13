@@ -8,9 +8,6 @@
 #'   \code{\link[TIPC]{tessellation}}.
 #' @return A list contain all 5 directional TIPC metrics which will be saved in
 #'   \code{root_dir}
-#' @examples
-#' root_dir <- system.file("data", package = "TIPC")
-#' count_TIPC_cat(root_dir=root_dir)
 #' @export
 count_TIPC_cat <- function (root_dir = NULL){
 

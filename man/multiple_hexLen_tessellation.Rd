@@ -29,9 +29,3 @@ A list contain all 5 directional sub-region count of 6 TIPC category.
 \description{
 A wrapper function to run \code{\link[TIPC]{tessellation}} at various hexagonal lengths.
 }
-\examples{
-load(system.file("data", "cell_data.rda", package = "TIPC"))
-output_dir <- "C:/Users/Mai Chan Lau/Desktop/TIPC_package/test_run"
-multiple_hexLen_tessellation(cell_data = cell_data, output_dir = output_dir)
-
-}

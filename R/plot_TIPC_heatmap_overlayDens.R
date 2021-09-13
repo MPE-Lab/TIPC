@@ -15,11 +15,6 @@
 #' @param density_data A data.frame containing the tumor-level density data of
 #' no. of rows equals to no. of cases/tumors (tumor_ids in row.names), each column
 #' represents the density values of a specific cell-type.
-#'
-#' @examples
-#' root_dir <- system.file("data", package = "TIPC")
-#' clustering_subfolder_nm <- 'ConsensusClusterPlus_test'
-#' plot_TIPC_heatmap(root_dir = root_dir, clustering_subfolder_nm = clustering_subfolder_nm)
 #' @export
 #' @import ComplexHeatmap
 #' @importFrom grDevices pdf dev.off

@@ -12,10 +12,6 @@
 #' @param hex_len_stepsize An integer indicating the step size of hexagonal
 #'   length. If unspecified (NULL), all found result folders generated
 #'   by \code{\link[TIPC]{tessellation}} will be processed.
-#' @examples
-#' root_dir <- "C:/Users/Mai Chan Lau/Desktop/TIPC_package/test_run/"
-#' multiple_hexLen_count_TIPC_cat(root_dir = root_dir)
-#'
 #' @export
 multiple_hexLen_count_TIPC_cat <- function(root_dir = NULL,
                                          hex_len_range = NULL, hex_len_stepsize =  10){

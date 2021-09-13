@@ -14,7 +14,3 @@ TIPC categories of 5 shifted grids output from
 \description{
 Calculate normalized TIPC spatial metrics for individual directions.
 }
-\examples{
-root_dir <- system.file("data", package = "TIPC")
-normalize_metrics(root_dir=root_dir)
-}

@@ -8,6 +8,7 @@ trend_plot_tinyClusters(
   root_dir = NULL,
   hex_len_range = NULL,
   hex_len_stepsize = NULL,
+  output_dir = NULL,
   pdf_width = 12,
   pdf_height = 8,
   min_cluster_size = 30,
@@ -27,6 +28,9 @@ different hexagonal lengths will be processed.}
 length. If unspecified (NULL), all found TIPC result folders of
 different hexagonal lengths will be processed.}
 
+\item{output_dir}{A directory path for saving output plot; if NULL, plots will
+be saved in root_dir}
+
 \item{pdf_width, pdf_height}{the width and height of the graphics region in inches.
 The default values are 18 and 12; inherited from \code{\link[grDevices]{pdf}}}
 
@@ -40,10 +44,4 @@ name containing the TIPC clustering results within each hex_len.}
 Plotting the number of tiny clusters and unclassified cases
 as the subregional size (hex_len) and different number of clusters (k) are
 used.
-}
-\examples{
-root_dir <- "C:/Users/Mai Chan Lau/Desktop/TIPC_package/test_run/"
-root_dir <-'C:/Users/Mai Chan Lau/Desktop/multiplex_analysis/TIPC_package/test_run_mIF_Tcell_bybatch30'
-trend_plot_tinyClusters(root_dir = root_dir)
-
 }

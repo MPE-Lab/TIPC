@@ -21,12 +21,6 @@
 #' name containing the TIPC clustering results within each hex_len.
 #' @param pdf_width,pdf_height the width and height of the graphics region in inches.
 #' The default values are 18 and 12; inherited from \code{\link[grDevices]{pdf}}
-#'
-#' @examples
-#' root_dir <- "C:/Users/Mai Chan Lau/Desktop/TIPC_package/test_run/"
-#' root_dir <-'C:/Users/Mai Chan Lau/Desktop/multiplex_analysis/TIPC_package/test_run_mIF_Tcell_bybatch30'
-#' trend_plot_tinyClusters(root_dir = root_dir)
-#'
 #' @export
 #' @importFrom grDevices pdf dev.off
 #' @import ggplot2
@@ -35,8 +29,8 @@
 trend_plot_tinyClusters <- function(root_dir =  NULL, hex_len_range = NULL, hex_len_stepsize =  NULL,
                                     output_dir=NULL,
                                     pdf_width=12, pdf_height=8,min_cluster_size = 30,
-                                    clustering_subfolder_nm='test'){
-
+                                    clustering_subfolder_nm='ConsensusClusterPlus_test'){
+  cluster_no <- k <- total_outlier_cases <- no_effective_cluster <- no_outlier_cluster <- NULL
   ## ======================
   ## check argument root_dir
   ## ======================

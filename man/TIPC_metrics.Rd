@@ -4,7 +4,8 @@
 \name{TIPC_metrics}
 \alias{TIPC_metrics}
 \title{TIPC normalized metric data.}
-\format{A data frame containing 50 rows (i.e. tumors) and 30 variables (6
+\format{
+A data frame containing 50 rows (i.e. tumors) and 30 variables (6
   TIPC metrics x 5 directions): \describe{
   \item{tumor_ONLY_O}{fractions of sub-region containing tumor cell only, center}
   \item{Stroma_ONLY_O}{fractions of sub-region containing stromal cell only,
@@ -38,15 +39,16 @@
   upper} \item{I2S_high_U}{fractions of sub-region containing immune & tumor
   cells and I:S ratio > global I:S, upper} \item{I2S_low_U}{fractions of
   sub-region containing immune & tumor cells and I:S ratio < global I:S,
-  upper}\item{tumor_ONLY_L}{fractions of sub-region containing tumor cell only, lower}
-  \item{Stroma_ONLY_L}{fractions of sub-region containing stromal cell only,
-  lower} \item{I2Tu_high_L}{fractions of sub-region containing immune & tumor
-  cells and I:T ratio > global I:T, lower} \item{I2Tu_low_L}{fractions of
+  upper}\item{tumor_ONLY_D}{fractions of sub-region containing tumor cell only, lower}
+  \item{Stroma_ONLY_D}{fractions of sub-region containing stromal cell only,
+  lower} \item{I2Tu_high_D}{fractions of sub-region containing immune & tumor
+  cells and I:T ratio > global I:T, lower} \item{I2Tu_low_D}{fractions of
   sub-region containing immune & tumor cells and I:T ratio < global I:T,
-  lower} \item{I2S_high_L}{fractions of sub-region containing immune & tumor
-  cells and I:S ratio > global I:S, lower} \item{I2S_low_L}{fractions of
+  lower} \item{I2S_high_D}{fractions of sub-region containing immune & tumor
+  cells and I:S ratio > global I:S, lower} \item{I2S_low_D}{fractions of
   sub-region containing immune & tumor cells and I:S ratio < global I:S,
-  lower}}}
+  lower}}
+}
 \usage{
 TIPC_metrics
 }

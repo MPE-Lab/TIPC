@@ -1,13 +1,13 @@
 Package: TIPC
-Title: Tumor-Immune Partitioning and Clustering (TIPC)
-Version: 0.1.0
+Title: Tumor-Immune Partitioning and Clustering (test)
+Version: 0.1.0.9000
 Authors@R: c(person("MaiChan", "Lau", email = "mclau@bwh.harvard.edu", role = c("aut", "cre")),
     person("Jennifer", "Borowsky", email = "borowsky.jennifer@gmail.com", role = c("aut")),
 	person("Shuji", "Ogino", email = "SOGINO@BWH.HARVARD.EDU", role = c("aut")),
 	person("Jonathan", "Nowak", email = "janowak@bwh.harvard.edu", role = c("aut")))
-Description: An R package for Tumor-immune Partitioning and Clustering (TIPC), a computational algorithm for discovering and documenting spatially-derived signatures of tumor-immune cell interactions within the tumor microenvironment
+Description: An R package for Tumor-immune Partitioning and Clustering (TIPC), a computational algorithm for discovering and documenting spatially-derived signatures of tumor-immune cell interactions within the tumor microenvironment.
 Depends: R (>= 3.5)
-License: BSD_3_clause + file LICENSE
+License: BSD-3-Clause
 Encoding: UTF-8
 LazyData: true
 Imports: 
@@ -25,4 +25,4 @@ Imports:
     RColorBrewer,
     survminer,
     dplyr
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1

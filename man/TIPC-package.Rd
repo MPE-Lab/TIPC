@@ -6,7 +6,7 @@
 \alias{TIPC-package}
 \title{An R package for Tumor-immune Partitioning and Clustering (TIPC)}
 \description{
-An R package for Tumor-immune Partitioning and Clustering (TIPC), a computational algorithm for discovering and documenting spatially-derived signatures of tumor-immune cell interactions within the tumor microenvironment
+An R package for Tumor-immune Partitioning and Clustering (TIPC), a computational algorithm for discovering and documenting spatially-derived signatures of tumor-immune cell interactions within the tumor microenvironment.
 }
 \author{
 \strong{Maintainer}: MaiChan Lau \email{mclau@bwh.harvard.edu}

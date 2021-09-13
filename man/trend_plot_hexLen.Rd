@@ -8,6 +8,7 @@ trend_plot_hexLen(
   root_dir = NULL,
   hex_len_range = NULL,
   hex_len_stepsize = NULL,
+  output_dir = NULL,
   pdf_width = 18,
   pdf_height = 12
 )
@@ -25,6 +26,9 @@ different hexagonal lengths will be processed.}
 length. If unspecified (NULL), all found TIPC result folders of
 different hexagonal lengths will be processed.}
 
+\item{output_dir}{A directory path for saving output plot; if NULL, plots will
+be saved in root_dir}
+
 \item{pdf_width, pdf_height}{the width and height of the graphics region in inches.
 The default values are 18 and 12; inherited from \code{\link[grDevices]{pdf}}}
 }
@@ -32,9 +36,4 @@ The default values are 18 and 12; inherited from \code{\link[grDevices]{pdf}}}
 Plotting the changes in TIPC metric count as the grid size i.e. hexagon
 length increases; the 5 shifting directional data will
   be collapsed specific hex_len.
-}
-\examples{
-root_dir <- "C:/Users/Mai Chan Lau/Desktop/TIPC_package/test_run/"
-trend_plot_hexLen(root_dir = root_dir)
-
 }

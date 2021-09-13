@@ -4,11 +4,13 @@
 \name{density_data}
 \alias{density_data}
 \title{Tumor denisty data.}
-\format{A data.frame with 50 rows (tumor_ids in row.names) and 2 variables:
+\format{
+A data.frame with 50 rows (tumor_ids in row.names) and 2 variables:
 \describe{
   \item{density_ct1}{density values of celltype1}
   \item{density_ct2}{density values of celltype2}
-  }}
+  }
+}
 \usage{
 density_data
 }

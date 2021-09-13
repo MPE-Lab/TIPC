@@ -13,12 +13,8 @@
 # @return A R object file saved in \code{output_dir}.
 #' @return A list contain all 5 directional sub-region count of 6 TIPC category
 #'   saved in \code{output_dir}.
-#' @examples
-#' load(system.file("data", "cell_data.rda", package = "TIPC"))
-#' output_dir <- "C:/Users/Mai Chan Lau/Desktop/TIPC_package/test_run"
-#' tessellation(cell_data = cell_data, output_dir = output_dir)
-#'
 #' @export
+#' @import spatstat
 #' @importFrom graphics par plot
 #' @importFrom grDevices pdf dev.off
 tessellation <- function(cell_data = NULL, hex_len = 100,
@@ -103,17 +99,17 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
     ## create ppp object
     ## ---------------
     if(nrow(immune_data) > 0 ){
-      immune_ppp <- spatstat::ppp(immune_data$X, immune_data$Y, c(global_Xmin,global_Xmax), c(global_Ymin,global_Ymax))
+      immune_ppp <- ppp(immune_data$X, immune_data$Y, c(global_Xmin,global_Xmax), c(global_Ymin,global_Ymax))
       #if(plot_flag) {setwd(output_dir);plot(immune_ppp, main='immune cells', pch = 16)}
     }
 
     if(nrow(tumor_data) > 0){
-      tumor_ppp <- spatstat::ppp(tumor_data$X, tumor_data$Y, c(global_Xmin,global_Xmax), c(global_Ymin,global_Ymax))
+      tumor_ppp <- ppp(tumor_data$X, tumor_data$Y, c(global_Xmin,global_Xmax), c(global_Ymin,global_Ymax))
       #if(plot_flag) {setwd(output_dir);plot(tumor_ppp, main='tumor cells', pch = 16)}
     }
 
     if(nrow(stroma_data) > 0){
-      stroma_ppp <- spatstat::ppp(stroma_data$X, stroma_data$Y, c(global_Xmin,global_Xmax), c(global_Ymin,global_Ymax))
+      stroma_ppp <- ppp(stroma_data$X, stroma_data$Y, c(global_Xmin,global_Xmax), c(global_Ymin,global_Ymax))
       #if(plot_flag) {setwd(output_dir);plot(stroma_ppp, main='stroma cells', pch = 16)}
     }
 
@@ -127,7 +123,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
     ## immune
     ## ---------------
     if(nrow(immune_data)>0){
-      M_immune <- spatstat::quadratcount(immune_ppp, tess=spatstat::hextess(immune_ppp, hex_len))
+      M_immune <- quadratcount(immune_ppp, tess=hextess(immune_ppp, hex_len))
       M_immune_list[[length(M_immune_list)+1]] <- M_immune
       names(M_immune_list )[length(M_immune_list )] <- core_ii
       if(plot_flag){
@@ -139,7 +135,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
       }
 
       ## shift right
-      M_immune_toR <- spatstat::quadratcount(immune_ppp, tess=spatstat::hextess(immune_ppp, hex_len, offset = c(hex_len,0)))
+      M_immune_toR <- quadratcount(immune_ppp, tess=hextess(immune_ppp, hex_len, offset = c(hex_len,0)))
       M_immune_list_R[[length(M_immune_list_R)+1]] <- M_immune_toR
       names(M_immune_list_R)[length(M_immune_list_R)] <- core_ii
       if(plot_flag){
@@ -148,7 +144,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
       }
 
       ## shift left
-      M_immune_toL <- spatstat::quadratcount(immune_ppp, tess=spatstat::hextess(immune_ppp, hex_len, offset = c(-hex_len,0)))
+      M_immune_toL <- quadratcount(immune_ppp, tess=hextess(immune_ppp, hex_len, offset = c(-hex_len,0)))
       M_immune_list_L[[length(M_immune_list_L)+1]] <- M_immune_toL
       names(M_immune_list_L)[length(M_immune_list_L)] <- core_ii
       if(plot_flag){
@@ -157,7 +153,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
       }
 
       ## shift up
-      M_immune_toU <- spatstat::quadratcount(immune_ppp, tess=spatstat::hextess(immune_ppp, hex_len, offset = c(0,hex_len)))
+      M_immune_toU <- quadratcount(immune_ppp, tess=hextess(immune_ppp, hex_len, offset = c(0,hex_len)))
       M_immune_list_U[[length(M_immune_list_U)+1]] <- M_immune_toU
       names(M_immune_list_U)[length(M_immune_list_U)] <- core_ii
       if(plot_flag){
@@ -166,7 +162,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
       }
 
       ## shift down
-      M_immune_toD <- spatstat::quadratcount(immune_ppp, tess=spatstat::hextess(immune_ppp, hex_len, offset = c(0,-hex_len)))
+      M_immune_toD <- quadratcount(immune_ppp, tess=hextess(immune_ppp, hex_len, offset = c(0,-hex_len)))
       M_immune_list_D[[length(M_immune_list_D)+1]] <- M_immune_toD
       names(M_immune_list_D)[length(M_immune_list_D)] <- core_ii
       if(plot_flag){
@@ -199,7 +195,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
     ## tumor cells
     ## ---------------
     if(nrow(tumor_data) > 0){
-      M_tumor <- spatstat::quadratcount(tumor_ppp, tess=spatstat::hextess(tumor_ppp, hex_len))
+      M_tumor <- quadratcount(tumor_ppp, tess=hextess(tumor_ppp, hex_len))
       M_tumor_list[[length(M_tumor_list)+1]] <- M_tumor
       names(M_tumor_list)[length(M_tumor_list)] <- core_ii
       if(plot_flag){
@@ -211,7 +207,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
       }
 
       ## shift right
-      M_tumor_toR <- spatstat::quadratcount(tumor_ppp, tess=spatstat::hextess(tumor_ppp, hex_len, offset = c(hex_len,0)))
+      M_tumor_toR <- quadratcount(tumor_ppp, tess=hextess(tumor_ppp, hex_len, offset = c(hex_len,0)))
       M_tumor_list_R[[length(M_tumor_list_R)+1]] <- M_tumor_toR
       names(M_tumor_list_R)[length(M_tumor_list_R)] <- core_ii
       if(plot_flag){
@@ -220,7 +216,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
       }
 
       ## shift left
-      M_tumor_toL <- spatstat::quadratcount(tumor_ppp, tess=spatstat::hextess(tumor_ppp, hex_len, offset = c(-hex_len,0)))
+      M_tumor_toL <- quadratcount(tumor_ppp, tess=hextess(tumor_ppp, hex_len, offset = c(-hex_len,0)))
       M_tumor_list_L[[length(M_tumor_list_L)+1]] <- M_tumor_toL
       names(M_tumor_list_L)[length(M_tumor_list_L)] <- core_ii
       if(plot_flag){
@@ -229,7 +225,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
       }
 
       ## shift up
-      M_tumor_toU <- spatstat::quadratcount(tumor_ppp, tess=spatstat::hextess(tumor_ppp, hex_len, offset = c(0,hex_len)))
+      M_tumor_toU <- quadratcount(tumor_ppp, tess=hextess(tumor_ppp, hex_len, offset = c(0,hex_len)))
       M_tumor_list_U[[length(M_tumor_list_U)+1]] <- M_tumor_toU
       names(M_tumor_list_U)[length(M_tumor_list_U)] <- core_ii
       if(plot_flag){
@@ -238,7 +234,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
       }
 
       ## shift down
-      M_tumor_toD <- spatstat::quadratcount(tumor_ppp, tess=spatstat::hextess(tumor_ppp, hex_len, offset = c(0,-hex_len)))
+      M_tumor_toD <- quadratcount(tumor_ppp, tess=hextess(tumor_ppp, hex_len, offset = c(0,-hex_len)))
       M_tumor_list_D[[length(M_tumor_list_D)+1]] <- M_tumor_toD
       names(M_tumor_list_D)[length(M_tumor_list_D)] <- core_ii
       if(plot_flag){
@@ -270,7 +266,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
     ## stroma cells
     ## ---------------
     if(nrow(stroma_data) > 0){
-      M_stroma <- spatstat::quadratcount(stroma_ppp, tess=spatstat::hextess(stroma_ppp, hex_len))
+      M_stroma <- quadratcount(stroma_ppp, tess=hextess(stroma_ppp, hex_len))
       M_stroma_list[[length(M_stroma_list)+1]] <- M_stroma
       names(M_stroma_list)[length(M_stroma_list)] <- core_ii
       if(plot_flag){
@@ -282,7 +278,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
       }
 
       ## shift right
-      M_stroma_toR <- spatstat::quadratcount(stroma_ppp, tess=spatstat::hextess(stroma_ppp, hex_len, offset = c(hex_len,0)))
+      M_stroma_toR <- quadratcount(stroma_ppp, tess=hextess(stroma_ppp, hex_len, offset = c(hex_len,0)))
       M_stroma_list_R[[length(M_stroma_list_R)+1]] <- M_stroma_toR
       names(M_stroma_list_R)[length(M_stroma_list_R)] <- core_ii
       if(plot_flag){
@@ -291,7 +287,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
       }
 
       ## shift left
-      M_stroma_toL <- spatstat::quadratcount(stroma_ppp, tess=spatstat::hextess(stroma_ppp, hex_len, offset = c(-hex_len,0)))
+      M_stroma_toL <- quadratcount(stroma_ppp, tess=hextess(stroma_ppp, hex_len, offset = c(-hex_len,0)))
       M_stroma_list_L[[length(M_stroma_list_L)+1]] <- M_stroma_toL
       names(M_stroma_list_L)[length(M_stroma_list_L)] <- core_ii
       if(plot_flag){
@@ -300,7 +296,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
       }
 
       ## shift up
-      M_stroma_toU <- spatstat::quadratcount(stroma_ppp, tess=spatstat::hextess(stroma_ppp, hex_len, offset = c(0,hex_len)))
+      M_stroma_toU <- quadratcount(stroma_ppp, tess=hextess(stroma_ppp, hex_len, offset = c(0,hex_len)))
       M_stroma_list_U[[length(M_stroma_list_U)+1]] <- M_stroma_toU
       names(M_stroma_list_U)[length(M_stroma_list_U)] <- core_ii
       if(plot_flag){
@@ -309,7 +305,7 @@ tessellation <- function(cell_data = NULL, hex_len = 100,
       }
 
       ## shift down
-      M_stroma_toD <- spatstat::quadratcount(stroma_ppp, tess=spatstat::hextess(stroma_ppp, hex_len, offset = c(0,-hex_len)))
+      M_stroma_toD <- quadratcount(stroma_ppp, tess=hextess(stroma_ppp, hex_len, offset = c(0,-hex_len)))
       M_stroma_list_D[[length(M_stroma_list_D)+1]] <- M_stroma_toD
       names(M_stroma_list_D)[length(M_stroma_list_D)] <- core_ii
       if(plot_flag){

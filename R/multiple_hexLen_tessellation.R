@@ -11,11 +11,6 @@
 #' @param output_dir A directory path for results saving.
 # @return A R object file saved in \code{output_dir}.
 #' @return A list contain all 5 directional sub-region count of 6 TIPC category.
-#' @examples
-#' load(system.file("data", "cell_data.rda", package = "TIPC"))
-#' output_dir <- "C:/Users/Mai Chan Lau/Desktop/TIPC_package/test_run"
-#' multiple_hexLen_tessellation(cell_data = cell_data, output_dir = output_dir)
-#'
 #' @export
 #' @importFrom graphics par plot
 multiple_hexLen_tessellation <- function(cell_data = NULL, output_dir = NULL,
