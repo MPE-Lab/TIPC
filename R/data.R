@@ -27,7 +27,7 @@
 #'
 #' @format A list containing 3 (celltypes) x 5 (directions) elements; each
 #'   element is a list of length 137 (cores) each of which is a named quadratcount
-#'   table generated using \code{\link[spatstat]{quadratcount}}.
+#'   table generated using \code{\link[spatstat.geom]{quadratcount}}.
 "tessellated_res"
 #' TIPC count data.
 #'

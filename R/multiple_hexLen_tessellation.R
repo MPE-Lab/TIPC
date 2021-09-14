@@ -9,7 +9,6 @@
 #' @param hex_len_range A vector of 2 integer number indicating the range of hexagonal length.
 #' @param hex_len_stepsize An integer indicating the step size of hexagonal length.
 #' @param output_dir A directory path for results saving.
-# @return A R object file saved in \code{output_dir}.
 #' @return A list contain all 5 directional sub-region count of 6 TIPC category.
 #' @export
 #' @importFrom graphics par plot
