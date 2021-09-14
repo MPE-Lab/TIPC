@@ -27,6 +27,7 @@
 #' @param all_ref_check A boolean indicating if multiple survival analyses are performed
 #' using individual clusters as reference; if TRUE, it will overwrite \code{ref_cluster_no}
 #' @param KM_xlab A character string specifying the x-axis label of Kaplan-Meier curve
+#' @param bnm A character string appending to the output filenames
 #' @importFrom stats as.formula relevel
 #' @importFrom grDevices pdf dev.off
 #' @importFrom RColorBrewer brewer.pal
@@ -37,7 +38,8 @@ postTIPC_SurvivalAnalysis <- function(root_dir =  NULL, clustering_subfolder_nm 
                                       one_k = NULL, min_cluster_size = 30,
                                       method = c('univariate', 'multivariate'),
                                       surv_data = NULL, ref_cluster_no = NULL,
-                                      all_ref_check=FALSE, KM_xlab='Time'){
+                                      all_ref_check=FALSE, KM_xlab='Time',
+                                      bnm=""){
 
   ## ======================
   ## root dir check
@@ -45,6 +47,7 @@ postTIPC_SurvivalAnalysis <- function(root_dir =  NULL, clustering_subfolder_nm 
   if(is.null(root_dir)) stop('No root directory is provided!\n')
   TIPC_cluster_dir <- file.path(root_dir, 'ConsensusClusterPlus_test')
 
+  if(bnm != ""){bnm <- paste0(bnm, '_')}
   ## ======================
   ## checking: input dir for TIPC clustering results
   ## ======================
@@ -153,7 +156,7 @@ postTIPC_SurvivalAnalysis <- function(root_dir =  NULL, clustering_subfolder_nm 
       ## ---------------
       formula <- as.formula(paste("survival::Surv(time, cens)~cluster_no"))
       res.cox <- survival::coxph(formula, data =  m)
-      fileNm <- file.path(kk,paste0('survival_univar_ref',ref_cluster,'.txt'))
+      fileNm <- file.path(kk,paste0(bnm,'survival_univar_ref',ref_cluster,'.txt'))
       capture.output(summary(res.cox), file = fileNm)
 
 
@@ -200,7 +203,7 @@ postTIPC_SurvivalAnalysis <- function(root_dir =  NULL, clustering_subfolder_nm 
           theme(legend.text = element_text(size = 14, color = "black", face = "bold"))+
           guides(color = guide_legend(size=10,nrow=2,byrow=TRUE))
 
-        plot_fileNm <- file.path(kk,paste0('KaplanMeier_ref',ref_cluster,'.pdf'))
+        plot_fileNm <- file.path(kk,paste0(bnm,'KaplanMeier_ref',ref_cluster,'.pdf'))
         pdf(plot_fileNm, onefile = FALSE)
         print(pl)
         dev.off()
@@ -217,7 +220,7 @@ postTIPC_SurvivalAnalysis <- function(root_dir =  NULL, clustering_subfolder_nm 
         covariates <- c(covariates, 'cluster_no' )
         formula <- as.formula(paste("survival::Surv(time, cens)~",paste0(covariates,collapse = '+')))
         res.cox <- survival::coxph(formula, data =  m)
-        fileNm <- file.path(kk,paste0('survival_multivar_ref',ref_cluster,'.txt'))
+        fileNm <- file.path(kk,paste0(bnm, 'survival_multivar_ref',ref_cluster,'.txt'))
         capture.output(summary(res.cox), file = fileNm)
 
       }
