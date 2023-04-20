@@ -13,7 +13,8 @@ postTIPC_SurvivalAnalysis(
   surv_data = NULL,
   ref_cluster_no = NULL,
   all_ref_check = FALSE,
-  KM_xlab = "Time"
+  KM_xlab = "Time",
+  bnm = ""
 )
 }
 \arguments{
@@ -49,6 +50,8 @@ reference, if unspecified (NULL) cluster of largest size will be used.}
 using individual clusters as reference; if TRUE, it will overwrite \code{ref_cluster_no}}
 
 \item{KM_xlab}{A character string specifying the x-axis label of Kaplan-Meier curve}
+
+\item{bnm}{A character string appending to the output filenames}
 }
 \description{
 Plotting heat-maps of TIPC metric clustering results of all k's unless it is

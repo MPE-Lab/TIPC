@@ -25,7 +25,6 @@ and no underscore}
 }
 \value{
 A list contain all 5 directional sub-region count of 6 TIPC category
-  saved in \code{output_dir}.
 }
 \description{
 Sub-dividing 2D cell space into hexogonal sub-regions and counting the
